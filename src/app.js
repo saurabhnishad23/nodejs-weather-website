@@ -6,6 +6,7 @@ const geocode = require('../utils/geocode');
 
 
 const app = express();
+const port = process.env.PORT || 4000
 
 // Define Path for Express config
 const publicDirecetoryPath = path.join(__dirname, '../public');
@@ -93,6 +94,6 @@ app.get('*', (req, res) => {
 })
 
 
-app.listen(4000, () => {
-    console.log('Server is start on port 4000')
+app.listen(port, () => {
+    console.log('Server is start on port ' + port)
 })

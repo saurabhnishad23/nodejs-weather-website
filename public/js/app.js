@@ -16,7 +16,7 @@ weatherForm.addEventListener('submit', (e) => {
     const location = search.value
     const messageOne = document.querySelector('#msg-1')
 
-        fetch('https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/'+ location +'?unitGroup=metric&key=5ANJVUG57KK9JRG5FHNU8NEXP&contentType=json').then((response) => {
+        fetch('/weather/?address=' + location).then((response) => {
         response.json().then((data) => {
             if(data.error){
                 messageOne.textContent = 'data.error'
